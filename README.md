@@ -1,6 +1,6 @@
 # SocialConsumer
-This is a small lightweight utility app that consumes social networking data from an API 
-and performs light data processing. Specifically, this app interfaces with the redit api.
+This is a small lightweight utility app that consumes aggregated social news data from an API 
+and performs light data processing. Specifically, this app interfaces with the redit api. https://www.reddit.com/wiki/api
 
 ## Getting Started
 
