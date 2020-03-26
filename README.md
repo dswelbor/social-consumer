@@ -4,10 +4,13 @@ and performs light data processing. Specifically, this app interfaces with the r
 
 ## Getting Started
 
+### Clone the Repository
+`git clone https://github.com/dswelbor/social-consumer.git`
+
 ### Install Python 3 (as needed)
 This app is written in python3 and will need a python interpretter. More information can be found at https://www.python.org/downloads/
 
-### Install pip (if applicable)
+### Install pip (as needed)
 Debian/Ubuntu Linux: 
 `sudo apt-get install python3-pip` <br>
 More detailed instructions are available at: 
