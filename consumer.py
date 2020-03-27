@@ -16,7 +16,7 @@ popular = reddit.subreddit('popular')
 # Get top 100 hot submissions
 hot_submissions = popular.hot(limit=submission_qty)
 # Populate list of OC content
-oc_submissions = []  # hot_submissions.filters.add(is_original_content=True)
+oc_submissions = []
 for submission in hot_submissions:
     if submission.is_original_content:
         oc_submissions.append(submission)
@@ -25,9 +25,19 @@ for submission in hot_submissions:
 hot_submissions = popular.hot(limit=submission_qty)
 hi_comment_submissions = []
 for submission in hot_submissions:
-    print(submission.num_comments)
     if submission.num_comments > comments_threshold:
         hi_comment_submissions.append(submission)
 
+# Get upvoted submissions descending
+hot_submissions = list(popular.hot(limit=submission_qty))
+hot_submissions.sort(key=lambda sub: getattr(sub, 'score'), reverse=True )
+upvoted_submission = hot_submissions[0:10]
+
+
+
+
 print(f'Number of OC submission: {len(oc_submissions)}')
 print(f'Number of highly commented submissions: {len(hi_comment_submissions)}')
+print(f'Number of top 10 hot submissions: {len(upvoted_submission)}')
+for test in upvoted_submission:
+    print(test.score)
