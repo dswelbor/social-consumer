@@ -28,5 +28,14 @@ To create a virtual environment for python and install app dependancies, do the 
 4. Go to repository root directory.
 5. Install requirements `pip3 install -r requirements.txt`
 
+## Configure API key
+Copy `praw_sample.ini` to a new `praw.ini`, file in the repository root 
+directory. In the `praw.ini` fill in relevant reddit api key and 
+other sensitive data. DO NOT UPLOAD `praw.ini` to github or add it to 
+any commits where it can be accessed from the commit history.
+Specifically, you will need to change: <br>
+- client_id
+- client_secret
+
 
 
