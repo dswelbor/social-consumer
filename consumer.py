@@ -40,6 +40,21 @@ for submission in hot_submissions:
     if submission.subreddit not in unique_subreddits:
         unique_subreddits.append(submission.subreddit)
 
+# Get recurring subreddits
+seen_subreddits = {}  # dictionary for seen subreddits
+recurring_subreddits = []
+for submission in hot_submissions:
+    try:
+        # This subredit has already been seen at least once
+        seen_subreddits[submission.subreddit] += 1 # increment count
+        
+        if seen_subreddits[submission.subreddit] == 2:
+            # First time subreddit has been seen more than once
+            recurring_subreddits.append(submission.subreddit) # add to list
+    
+    except KeyError:
+        # First time seeing this subreddit
+        seen_subreddits[submission.subreddit] = 1
 
 
 
@@ -52,4 +67,5 @@ for test in top10_upvoted_submissions:
 print(f'Number of unique subreddits in hot submissions: {len(unique_subreddits)}')
 for sub in unique_subreddits:
     print(sub)
-    
+
+print(len(recurring_subreddits))
