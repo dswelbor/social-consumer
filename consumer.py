@@ -11,6 +11,7 @@ class Consumer:
     QTY = 100  # Number of posts to pull from api
     COMMENT_THRESHOLD = 1000  # Target number of comments
     TOP_QTY = 10  # Number for topX collections
+    MULTIREDDIT_NAME = 'top100recurring'
 
     def __init__(self):
         # Initialize python reddit api wrapper for r/popular subreddit
@@ -96,7 +97,6 @@ class Consumer:
                 # Translate subreddit into Forum and append to list
                 new_forum = Forum(
                     title=submission.subreddit.display_name, 
-                    url=submission.subreddit.id,
                     description=submission.subreddit.public_description)
                 unique_subreddits.append(new_forum)
 
@@ -120,7 +120,6 @@ class Consumer:
                     # First time subreddit has been seen more than once
                     new_forum = Forum(
                         title=submission.subreddit.display_name, 
-                        url=submission.subreddit.id,
                         description=submission.subreddit.public_description)
                     # Add to list
                     recurring_subreddits.append(new_forum)
@@ -131,6 +130,28 @@ class Consumer:
 
         # Return list of recurring Forums (subreddits)
         return recurring_subreddits
+
+    def create_multireddit(self):
+        """This method creates a multi-reddit from a list of recurring subreddits"""
+        # Get recurring subreddits
+        seen_subreddits = {}  # dictionary for seen subreddits
+        recurring_subreddits = []
+        for submission in self.hot_submissions:
+            try:
+                # This subredit has already been seen at least once
+                seen_subreddits[submission.subreddit] += 1 # increment count
+
+                if seen_subreddits[submission.subreddit] == 2:
+                    # First time subreddit has been seen more than once
+                    recurring_subreddits.append(submission.subreddit)
+
+            except KeyError:
+                # First time seeing this subreddit
+                seen_subreddits[submission.subreddit] = 1
+        # Create a multireddit with recurring subreddits
+        self.reddit.multireddit.create(display_name=self.MULTIREDDIT_NAME, 
+           subreddits=recurring_subreddits)
+
 """
 # parameters
 SUBMISSION_QTY = 100  # Number of posts to pull from api
