@@ -38,4 +38,26 @@ Specifically, you will need to change: <br>
 - client_secret
 
 
-
+## Run SocialConsumer
+Using an activated virtualenv instance, from the repository root directory execute: <br>
+`python3 consumer.py`
+<br>
+One possible example output could be: <br>
+```bash
+Number of OC submission: 0
+Number of highly commented submissions: 45
+Number of top 10 hot submissions: 10
+80548
+76119
+75737
+72314
+70646
+68750
+66845
+64142
+59745
+58323
+Number of unique subreddits in hot submissions: 87
+Number of recurring subreddits in hot submissions: 13
+/user/testdev/m/testing1236
+```
