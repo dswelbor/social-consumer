@@ -16,11 +16,16 @@ upvoted_posts = social_consumer.get_upvoted_submissions()
 unique_forums = social_consumer.get_unique_subreddits()
 recurring_forums = social_consumer.get_recurring_subreddits()
 # Create multireddit of recurring subreddits
-social_consumer.create_multireddit()
+multireddit_result = social_consumer.create_multireddit()
 
 # Print collection lengths
-print(len(oc_posts))
-print(len(hi_comment_posts))
-print(len(upvoted_posts))
-print (len(unique_forums))
-print (len(recurring_forums))
+print(f'Number of Original Content Posts {len(oc_posts)}')
+print(f'Number of Posts with High Comment Counts: {len(hi_comment_posts)}')
+print(f'Number of top 10 most upvoted posts (descending): {len(upvoted_posts)}')
+# print top most upvoted posts
+for post in upvoted_posts:
+    print(f'\tTitle: {post.title[:50]}')
+    print(f'\tUpvotes: {post.upvotes}')
+print(f'Number of "unique" subreddits in r/popular: {len(unique_forums)}')
+print(f'Number of recurring subreddits in r/popular: {len(recurring_forums)}')
+print(f'Multireddit: {multireddit_result}')

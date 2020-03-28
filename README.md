@@ -47,27 +47,27 @@ One possible example output could be: <br>
 Number of Original Content Posts 3
 Number of Posts with High Comment Counts: 27
 Number of top 10 most upvoted posts (descending): 10
-        Title: A doctor at a high risk hospital is living away from his family. This 
-        Upvotes: 96025
-        Title: LPT: First rule of family gatherings, always bring your own vehicle so
-        Upvotes: 91968
+        Title: A doctor at a high risk hospital is living away fr
+        Upvotes: 96626
+        Title: LPT: First rule of family gatherings, always bring
+        Upvotes: 92835
         Title: Spinnin’
-        Upvotes: 80998
-        Title: Wife wanted a cat. I said no, so we compromised and got a one eyed cat
-        Upvotes: 79029
-        Title: Elsa is pretty athletic for a person that was locked up in her room si
-        Upvotes: 76957
-        Title: Data shows Amazon raised prices during pandemic alongside sellers accu
-        Upvotes: 71308
-        Title: He really tried
-        Upvotes: 68145
+        Upvotes: 81553
+        Title: Wife wanted a cat. I said no, so we compromised an
+        Upvotes: 79805
+        Title: Elsa is pretty athletic for a person that was lock
+        Upvotes: 77456
+        Title: Data shows Amazon raised prices during pandemic al
+        Upvotes: 71659
         Title: This man is the original John wick
-        Upvotes: 68047
-        Title: TIL A married Secret Service agent had trouble extraditing a hacker fr
-        Upvotes: 66071
+        Upvotes: 68970
+        Title: He really tried
+        Upvotes: 68267
+        Title: TIL A married Secret Service agent had trouble ext
+        Upvotes: 66258
         Title: 🔥 rainbow island, iran
-        Upvotes: 65292
+        Upvotes: 65840
 Number of "unique" subreddits in r/popular: 91
 Number of recurring subreddits in r/popular: 9
-/user/testdev/m/top10recurring
+Multireddit: /user/testdev/m/top100recurring
 ```

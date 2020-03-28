@@ -151,5 +151,7 @@ class Consumer:
                 # First time seeing this subreddit
                 seen_subreddits[submission.subreddit] = 1
         # Create a multireddit with recurring subreddits
-        self.reddit.multireddit.create(display_name=self.MULTIREDDIT_NAME, 
+        new_multireddit = self.reddit.multireddit.create(display_name=self.MULTIREDDIT_NAME, 
            subreddits=recurring_subreddits)
+        
+        return str(new_multireddit)
