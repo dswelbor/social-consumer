@@ -18,13 +18,15 @@ https://pip.pypa.io/en/stable/installing/
 
 ### Install VirtualEnv (as needed)
 A virtual environment for python app is preferred. More information about virtualenv can be found at https://virtualenv.pypa.io/en/latest/installation.html <br>
-From commandline, run: `sudo pip3 install virtualenv`
+From commandline (linux), run: `sudo pip3 install virtualenv` <br>
+or <br>
+From commandpromt (windows administrator mode), run `pip3 install virtualenv`
 
 ### Create virtual environment and install dependancies
 To create a virtual environment for python and install app dependancies, do the following:
 1. Go to `/home/<user>` directory (or other preferred location for virtual environments)
 2. Create a virtualenv `virtualenv -p python3 venv`
-3. Activate virtualenv `source venv/bin/activate`
+3. Activate virtualenv `source venv/bin/activate` (or `source venv/Scripts/activate` on windows)
 4. Go to repository root directory.
 5. Install requirements `pip3 install -r requirements.txt`
 
