@@ -5,7 +5,6 @@ collections, and export the data in a human readable format.
 
 import json
 from consumer import Consumer
-from models import Forum, Post
 from utils import to_dict
 
 # Define constants
