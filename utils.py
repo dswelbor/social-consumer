@@ -8,7 +8,7 @@ import json
 def to_dict(obj_list):
     """
     Utility method accepts a passed list of objects and returns a list 
-    of dictionariess.
+    of dictionaries.
     """
     # Convert list of objects to list of dictionaries
     new_list = []
