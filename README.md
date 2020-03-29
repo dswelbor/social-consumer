@@ -92,4 +92,4 @@ Processed data exported to 'output.json'
 ```
 
 ## Export Data
-SocialConsumer aggregates data from the reddits r/popular subreddit and performs light data processing. The output listing can be accessing by default from the repository root directory in `output.json`
+SocialConsumer aggregates data from the reddits r/popular subreddit and performs light data processing. The output listing can be accessing by default from the repository root directory in `output.json`. A sample output list file is provided `output_sample.json`
