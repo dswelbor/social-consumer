@@ -28,46 +28,66 @@ To create a virtual environment for python and install app dependancies, do the 
 4. Go to repository root directory.
 5. Install requirements `pip3 install -r requirements.txt`
 
-## Configure API key
-Copy `praw_sample.ini` to a new `praw.ini`, file in the repository root 
-directory. In the `praw.ini` fill in relevant reddit api key and 
+## Configure OAuth for Reddit
+Follow the steps below to configure SocialConsumer with the appropriate credentials. Note: If you do not have an api key already, visit: https://www.reddit.com/prefs/apps
+1. Copy `praw_sample.ini` to a new `praw.ini`, file in the repository root 
+directory.
+2. In the `praw.ini` fill in relevant reddit api key and 
 other sensitive data. DO NOT UPLOAD `praw.ini` to github or add it to 
 any commits where it can be accessed from the commit history.
-Specifically, you will need to change: <br>
-- client_id
-- client_secret
+
+   Specifically, you will need to change: <br>
+   - client_id
+   - client_secret
+   - username
+   - password
+
+    DO NOT UPLOAD `praw.ini` to github or add it to 
+any commits where it can be accessed from the commit history.
 
 
-## Run SocialConsumer
-Using an activated virtualenv instance, from the repository root directory execute: <br>
+## Running SocialConsumer
+First follow the steps above to configure the app for OAuth with the reddit API. Using an activated virtualenv instance, from the repository root directory execute: <br>
 `python3 run.py`
 <br>
 One possible example output could be: <br>
-```bash
-Number of Original Content Posts 3
-Number of Posts with High Comment Counts: 27
-Number of top 10 most upvoted posts (descending): 10
-        Title: A doctor at a high risk hospital is living away fr
-        Upvotes: 96626
-        Title: LPT: First rule of family gatherings, always bring
-        Upvotes: 92835
-        Title: Spinnin’
-        Upvotes: 81553
-        Title: Wife wanted a cat. I said no, so we compromised an
-        Upvotes: 79805
-        Title: Elsa is pretty athletic for a person that was lock
-        Upvotes: 77456
-        Title: Data shows Amazon raised prices during pandemic al
-        Upvotes: 71659
-        Title: This man is the original John wick
-        Upvotes: 68970
-        Title: He really tried
-        Upvotes: 68267
-        Title: TIL A married Secret Service agent had trouble ext
-        Upvotes: 66258
-        Title: 🔥 rainbow island, iran
-        Upvotes: 65840
-Number of "unique" subreddits in r/popular: 91
-Number of recurring subreddits in r/popular: 9
-Multireddit: /user/testdev/m/top100recurring
 ```
+Aggregating 'original content' posts...
+Aggregating 'high comment count' posts...
+Aggregating 'most upvoted' posts...
+Aggregating 'unique' subreddits...
+Aggregating 'recurring' subreddits...
+Creating multireddit with recurring subreddits...
+
+Number of Original Content Posts 3
+Number of Posts with High Comment Counts: 38
+Number of top 10 most upvoted posts (descending): 10
+        Title: LPT: First rule of family gatherings, always bring
+        Upvotes: 113739
+        Title: A doctor at a high risk hospital is living away fr
+        Upvotes: 108782
+        Title: Poor dads
+        Upvotes: 103172
+        Title: Spinnin’
+        Upvotes: 91465
+        Title: In my super small indiana town
+        Upvotes: 87154
+        Title: My neighbour Joe returning home from hospital, now
+        Upvotes: 80863
+        Title: Checkmate
+        Upvotes: 75748
+        Title: WHO accused of 'carrying China's water' after offi
+        Upvotes: 69418
+        Title: Whoops.
+        Upvotes: 68639
+        Title: My quarantine birthday is going well.
+        Upvotes: 64208
+Number of "unique" subreddits in r/popular: 92
+Number of recurring subreddits in r/popular: 8
+Multireddit: /user/testdev/m/top100recurring
+
+Processed data exported to 'output.json'
+```
+
+## Export Data
+SocialConsumer aggregates data from the reddits r/popular subreddit and performs light data processing. The output listing can be accessing by default from the repository root directory in `output.json`
