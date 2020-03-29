@@ -15,12 +15,23 @@ OUTPUT_FILENAME = 'output.json'
 social_consumer = Consumer()
 
 # Get lists of posts
+print('Aggregating \'original content\' posts...')
 oc_posts = social_consumer.get_oc_submissions()
+
+print('Aggregating \'high comment count\' posts...')
 hi_comment_posts = social_consumer.get_hi_comment_submissions()
+
+print('Aggregating \'most upvoted\' posts...')
 upvoted_posts = social_consumer.get_upvoted_submissions()
+
+print('Aggregating \'unique\' subreddits...')
 unique_forums = social_consumer.get_unique_subreddits()
+
+print('Aggregating \'recurring\' subreddits...')
 recurring_forums = social_consumer.get_recurring_subreddits()
+
 # Create multireddit of recurring subreddits
+print('Creating multireddit with recurring subreddits...\n')
 multireddit_result = social_consumer.create_multireddit()
 
 # Print collection lengths
@@ -33,7 +44,7 @@ for post in upvoted_posts:
     print(f'\tUpvotes: {post.upvotes}')
 print(f'Number of "unique" subreddits in r/popular: {len(unique_forums)}')
 print(f'Number of recurring subreddits in r/popular: {len(recurring_forums)}')
-print(f'Multireddit: {multireddit_result}')
+print(f'Multireddit: {multireddit_result}\n')
 
 # Export data as json
 data = {}
@@ -48,6 +59,7 @@ data_json = json.dumps(data, indent=4)
 try:
     with open(OUTPUT_FILENAME, "wt") as output:
         output.write(data_json)
+        print(f'Processed data exported to \'{OUTPUT_FILENAME}\'')
 except IOError:
     print('Could not write data to file')
     print(f'Data: \n{data_json}')
