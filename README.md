@@ -1,6 +1,8 @@
 # SocialConsumer
-This is a small lightweight utility app that consumes aggregated social news data from an API 
-and performs light data processing. Specifically, this app interfaces with the redit api. https://www.reddit.com/wiki/api
+SocialConsumer aggregates data from the reddits r/popular subreddit and performs light data processing. Specifically, this app interfaces with the Redit API. It utilizes the Python Reddit API Wrapper (PRAW). <br>
+
+https://www.reddit.com/wiki/api <br>
+https://praw.readthedocs.io/en/latest/index.html
 
 ## Getting Started
 
@@ -92,4 +94,4 @@ Processed data exported to 'output.json'
 ```
 
 ## Export Data
-SocialConsumer aggregates data from the reddits r/popular subreddit and performs light data processing. The output listing can be accessing by default from the repository root directory in `output.json`. A sample output list file is provided `output_sample.json`
+The output listing can be accessing by default from the repository root directory in `output.json`. A sample output list file is provided as `output_sample.json`.
