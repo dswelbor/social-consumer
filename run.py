@@ -44,4 +44,10 @@ data['unique_reddits'] = to_dict(unique_forums)
 data['recurring_reddits'] = to_dict(recurring_forums)
 data['multireddit_created'] = multireddit_result
 data_json = json.dumps(data, indent=4)
-print(data_json)
+# Write json to file
+try:
+    with open(OUTPUT_FILENAME, "wt") as output:
+        output.write(data_json)
+except IOError:
+    print('Could not write data to file')
+    print(f'Data: \n{data_json}')
