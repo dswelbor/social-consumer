@@ -3,8 +3,13 @@ This is a simple script to consume the (reddit) API, build the appropriate
 collections, and export the data in a human readable format.
 """
 
+import json
 from consumer import Consumer
 from models import Forum, Post
+from utils import to_dict
+
+# Define constants
+OUTPUT_FILENAME = 'output.json'
 
 # Instantiate a Consumer object to consume data from reddit api
 social_consumer = Consumer()
@@ -29,3 +34,14 @@ for post in upvoted_posts:
 print(f'Number of "unique" subreddits in r/popular: {len(unique_forums)}')
 print(f'Number of recurring subreddits in r/popular: {len(recurring_forums)}')
 print(f'Multireddit: {multireddit_result}')
+
+# Export data as json
+data = {}
+data['original_content_posts'] = to_dict(oc_posts)
+data['high_comment_posts'] = to_dict(hi_comment_posts)
+data['upvoted_posts'] = to_dict(upvoted_posts)
+data['unique_reddits'] = to_dict(unique_forums)
+data['recurring_reddits'] = to_dict(recurring_forums)
+data['multireddit_created'] = multireddit_result
+data_json = json.dumps(data, indent=4)
+print(data_json)

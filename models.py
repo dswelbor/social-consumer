@@ -21,4 +21,3 @@ class Forum:
         """Parameterized ctor for default values for description"""
         self.title = title
         self.description = description
-
