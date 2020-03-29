@@ -133,3 +133,6 @@ dmypy.json
 
 # Reddit configs
 praw.ini
+
+# Build artifacts
+output.json
